@@ -38,12 +38,16 @@ var Quirkey = {
 			this.fetch();
 		},
 		fetch: function() {
-			$.get('http://github.com/api/v1/json/quirkey?callback=?', Quirkey.github.load);
+			$.getJSON('http://github.com/api/v1/json/quirkey?callback=?', Quirkey.github.load);
 		},
 		load: function(github_data) {
 			var gh = Quirkey.github;
-			$.each(github_data.user.repositories, function(repository) {
-				if (!repository.forked) {
+			var repositories = github_data.user.repositories;
+			repositories.sort(function(a,b) {
+				return b.watchers - a.watchers;
+			});
+			$.each(repositories, function(i, repository) {
+				if (!repository.fork && !repository.private) {
 					if (repository.watchers > 2) {
 						// popular
 						gh.displayRepository('popular', repository);
@@ -55,8 +59,9 @@ var Quirkey = {
 			});
 		},
 		displayRepository: function(inside, repo) {
-			console.log(repo);
-			$('#projects_' + inside).insert('<h4>' + repo.name + '</h4>');
+			var repo_html = '<div class="repo"><h3><a href="' + repo.url + '">' + repo.name + '</a> (' + repo.watchers + ')</h3>';
+			repo_html += '<p>' + repo.description + '</p></div>';
+			$('#projects_' + inside).append(repo_html);
 		}
 	}
 };
