@@ -44,8 +44,9 @@ var Quirkey = {
 			var gh = Quirkey.github;
 			var repositories = github_data.user.repositories;
 			repositories.sort(function(a,b) {
-				return b.watchers - a.watchers;
+				return (b.watchers + b.forks) - (a.watchers + a.forks);
 			});
+			$('.project_holder').html('');
 			$.each(repositories, function(i, repository) {
 				if (!repository.fork && !repository.private) {
 					if (repository.watchers > 2) {
@@ -59,7 +60,11 @@ var Quirkey = {
 			});
 		},
 		displayRepository: function(inside, repo) {
-			var repo_html = '<div class="repo"><h3><a href="' + repo.url + '">' + repo.name + '</a> (' + repo.watchers + ')</h3>';
+			var repo_html = '<div class="repo"><h3><a href="' + repo.url + '">' + repo.name + '</a>';
+			if ((repo.watchers + repo.forks) > 2) {
+				repo_html += ' (' + repo.watchers + ')';
+			}
+			repo_html += '</h3>';
 			repo_html += '<p>' + repo.description + '</p></div>';
 			$('#projects_' + inside).append(repo_html);
 		}
