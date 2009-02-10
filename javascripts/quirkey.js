@@ -44,29 +44,29 @@ var Quirkey = {
 			var gh = Quirkey.github;
 			var repositories = github_data.user.repositories;
 			repositories.sort(function(a,b) {
-				return (b.watchers + b.forks) - (a.watchers + a.forks);
+				return (a.watchers + a.forks) - (b.watchers + b.forks);
 			});
-			$('.project_holder').html('');
+			$('.project_holder').hide();
 			$.each(repositories, function(i, repository) {
 				if (!repository.fork && !repository.private) {
 					if (repository.watchers > 2) {
 						// popular
-						gh.displayRepository('popular', repository);
+						gh.displayRepository('popular', repository, true);
 					} else {
 						// other
-						gh.displayRepository('other', repository);
+						gh.displayRepository('other', repository, false);
 					}
 				}
 			});
 		},
-		displayRepository: function(inside, repo) {
+		displayRepository: function(inside, repo, show_stats) {
 			var repo_html = '<div class="repo"><h3><a href="' + repo.url + '">' + repo.name + '</a>';
-			if ((repo.watchers + repo.forks) > 2) {
+			if (show_stats) {
 				repo_html += ' (' + repo.watchers + ')';
 			}
 			repo_html += '</h3>';
 			repo_html += '<p>' + repo.description + '</p></div>';
-			$('#projects_' + inside).append(repo_html);
+			$('#projects_' + inside).prepend(repo_html);
 		}
 	}
 };

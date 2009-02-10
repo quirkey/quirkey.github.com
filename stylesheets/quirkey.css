@@ -154,7 +154,7 @@ a img {
 	font-size: 18px;
 	color:#666;
 }
-#projects_other .repo {
+.repo {
 	width: 50%;
 	float:left;
 }
