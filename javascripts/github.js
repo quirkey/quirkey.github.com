@@ -3,10 +3,10 @@ var Github = {
 		this.fetch();
 	},
 	fetch: function() {
-		$.getJSON('http://github.com/api/v1/json/quirkey?callback=?', Quirkey.github.load);
+		$.getJSON('http://github.com/api/v1/json/quirkey?callback=?', Github.load);
 	},
 	load: function(github_data) {
-		var gh = Quirkey.github;
+		var gh = Github;
 		var repositories = github_data.user.repositories;
 		repositories.sort(function(a,b) {
 			return (a.watchers + a.forks) - (b.watchers + b.forks);
