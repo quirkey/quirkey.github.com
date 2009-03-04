@@ -59,3 +59,9 @@
 	border: none;
 }
 
+.warning {
+	background:#E44F21;
+	color: #FFF;
+	padding: 15px;
+	text-align: center;
+}
