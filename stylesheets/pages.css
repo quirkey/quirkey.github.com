@@ -55,6 +55,11 @@
 	padding-top: 10px;
 	font-size: 22px;
 }
+#content h4 {
+	color: #656565;
+	padding-top: 10px;
+	font-size: 18px;
+}
 #content a img {
 	border: none;
 }
