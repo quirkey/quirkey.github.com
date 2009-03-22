@@ -68,9 +68,7 @@
 #content table {
   width: 100%;
   border-collapse: collapse;
-  border-left: 1px solid #E5E5E5;
-  border-right: 1px solid #E5E5E5;
-  border-bottom: 1px solid #E5E5E5;
+  border: 1px solid #E5E5E5;
 }
 #content table th {
   border-bottom: 1px solid #E5E5E5;
