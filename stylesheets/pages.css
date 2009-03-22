@@ -56,9 +56,10 @@
 	font-size: 22px;
 }
 #content h4 {
-	color: #656565;
+	color: #484848;
 	padding-top: 10px;
 	font-size: 18px;
+	font-weight: normal;
 }
 #content a img {
 	border: none;
