@@ -59,6 +59,24 @@
 	border: none;
 }
 
+#content table {
+  width: 100%;
+  border-collapse: collapse;
+  border-left: 1px solid #E5E5E5;
+  border-right: 1px solid #E5E5E5;
+}
+#content table th {
+  border-bottom: 1px solid #E5E5E5;
+  font-weight:normal;
+  color:#666;
+}
+#content table td {
+  vertical-align: top;
+  border-right: 1px solid #E5E5E5;
+  padding: 4px;
+  text-align:left;
+}
+
 .warning {
 	background:#E44F21;
 	color: #FFF;
