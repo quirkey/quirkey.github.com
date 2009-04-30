@@ -30,7 +30,11 @@ var Github = {
 			repo_html += ' (' + repo.watchers + ')';
 		}
 		repo_html += '</h3>';
-		repo_html += '<p>' + repo.description + '</p></div>';
+		repo_html += '<p>' + repo.description + '</p>';
+    if (repo.homepage) {
+		  repo_html += '<p class="url"><a href="' + repo.homepage + '">&raquo; ' + repo.homepage + '</a></p>';
+		}
+		repo_html += '</div>';
 		$('#projects_' + inside).prepend(repo_html);
 	}
 };
