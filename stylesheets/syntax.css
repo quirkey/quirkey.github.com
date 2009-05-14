@@ -1,7 +1,10 @@
 .highlight {
-	line-height: 120%;
+	line-height: 80%;
 	border-top: 1px solid #CCC;
 	border-bottom: 1px solid #CCC;
+}
+.highlight br {
+  height: 0px;
 }
 .hll { background-color: #ffffcc }
 .c { color: #408080; font-style: italic } /* Comment */

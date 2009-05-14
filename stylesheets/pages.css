@@ -29,6 +29,15 @@
 	color:#333;
 	background: #E5E5E5;
 }
+#pagenav li ul {
+  margin: 0px;
+  list-style:none;
+}
+#pagenav li ul li a {
+  padding: 0px 10px 0px;
+  font-size: 16px;
+  color:#A6A6A6;
+}
 #content {
 	position: relative;
 	margin-left: 255px;
@@ -45,7 +54,14 @@
 	color: #B76C29;
 }
 #content h2 {
+  border-top: 1px solid #CCC;
+  color: #989898;
+  font-size: 30px;
+}
+#content h2.project_name {
+  border:none;
 	margin: 0px;
+	color:#414141;
 	font-size: 44px;
 }
 #content h3 {
@@ -56,11 +72,19 @@
 	font-size: 22px;
 }
 #content h4 {
-	color: #484848;
+	color: #565656;
+	border-top: 1px solid #E9E9E9;
 	padding-top: 10px;
 	font-size: 18px;
 	font-weight: normal;
 }
+#content h4 {
+  margin:0px;
+}
+#content h4 a {
+ color:#666; 
+}
+
 #content a img {
 	border: none;
 }
@@ -84,6 +108,20 @@
   text-align:left;
 }
 
+
+#contact {
+	width: 100%;
+  margin: 10px;
+  background: #E5E5E5;
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  text-align:center;
+}
+#contact p {
+  width: 986px;
+  margin: 10px auto;
+  text-align: left;
+}
 .warning {
 	background:#E44F21;
 	color: #FFF;
