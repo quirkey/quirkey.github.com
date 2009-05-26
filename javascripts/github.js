@@ -14,7 +14,7 @@ var Github = {
 		$('.project_holder').hide();
 		$.each(repositories, function(i, repository) {
 			if (!repository.fork && !repository.private) {
-				if (repository.watchers > 2) {
+				if (repository.watchers > 10) {
 					// popular
 					gh.displayRepository('popular', repository, true);
 				} else {
