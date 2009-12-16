@@ -6,6 +6,11 @@
 .highlight br {
   height: 0px;
 }
+.highlight pre {
+  background: #FEFEFE;
+  color: #333;
+  line-height: 100%;
+}
 .hll { background-color: #ffffcc }
 .c { color: #408080; font-style: italic } /* Comment */
 .err { border: 1px solid #FF0000 } /* Error */
