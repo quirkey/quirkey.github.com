@@ -1,33 +1,33 @@
 /******************************************************
- *	docs									*
+ *  docs                  *
 \*****************************************************/
 
 
 #pagenav {
-	list-style: none;
-	width: 200px;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	padding: 0px;
-	margin: 90px 0px 0px 0px;
-	text-align: right;
+  list-style: none;
+  width: 200px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 0px;
+  margin: 90px 0px 0px 0px;
+  text-align: right;
 }
 #pagenav li {
-	padding:2px 0px;
-	margin:0px;
+  padding:2px 0px;
+  margin:0px;
 }
 #pagenav li a {
-	padding: 2px 0px;
-	display:block;
-	text-decoration: none;
-	font-size: 18px;
-	color:#767676;
+  padding: 2px 0px;
+  display:block;
+  text-decoration: none;
+  font-size: 18px;
+  color:#767676;
 }
 #pagenav li a:hover {
-	text-decoration: none;
-	color:#333;
-	background: #E5E5E5;
+  text-decoration: none;
+  color:#333;
+  background: #E5E5E5;
 }
 #pagenav li ul {
   margin: 0px;
@@ -39,19 +39,19 @@
   color:#A6A6A6;
 }
 #content {
-	position: relative;
-	margin-left: 255px;
+  position: relative;
+  margin-left: 255px;
 }
 #latest_version {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	z-index: 15;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 15;
 }
 #latest_version a {
-	font-size: 44px;
-	text-decoration:none;
-	color: #B76C29;
+  font-size: 44px;
+  text-decoration:none;
+  color: #B76C29;
 }
 #content h2 {
   border-top: 1px solid #CCC;
@@ -60,33 +60,33 @@
 }
 #content h2.project_name {
   border:none;
-	margin: 0px;
-	color:#414141;
-	font-size: 44px;
+  margin: 0px;
+  color:#414141;
+  font-size: 44px;
 }
 #content h3 {
-	color: #545454;
-	margin-top: 40px;
-	border-top: 1px solid #CCC;
-	padding-top: 10px;
-	font-size: 22px;
+  color: #545454;
+  margin-top: 40px;
+  border-top: 1px solid #CCC;
+  padding-top: 10px;
+  font-size: 22px;
 }
 #content h4 {
-	color: #565656;
-	border-top: 1px solid #E9E9E9;
-	padding-top: 10px;
-	font-size: 18px;
-	font-weight: normal;
+  color: #565656;
+  border-top: 1px solid #E9E9E9;
+  padding-top: 10px;
+  font-size: 18px;
+  font-weight: normal;
 }
 #content h4 {
   margin:0px;
 }
 #content h4 a {
- color:#666; 
+ color:#666;
 }
 
 #content a img {
-	border: none;
+  border: none;
 }
 
 #content table {
@@ -122,8 +122,15 @@
   text-align: left;
 }
 .warning {
-	background:#E44F21;
-	color: #FFF;
-	padding: 10px;
-	text-align: center;
+  background:#E44F21;
+  color: #FFF;
+  padding: 10px;
+  text-align: center;
+}
+.warning h4, a {
+  color: #E5E5E5;
+}
+.warning h4 {
+  border: none;
+  border-bottom: #E5E5E5;
 }
