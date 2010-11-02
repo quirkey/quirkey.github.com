@@ -127,7 +127,8 @@
   padding: 10px;
   text-align: center;
 }
-#content .warning h4, a {
+#content .warning h4,
+#content .warning a {
   color: #E5E5E5;
 }
 #content .warning h4 {
