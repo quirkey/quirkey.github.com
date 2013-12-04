@@ -3,10 +3,11 @@ var Github = {
 		this.fetch();
 	},
 	fetch: function() {
-		$.getJSON('http://github.com/api/v1/json/quirkey?callback=?', Github.load);
+		$.getJSON('https://api.github.com/users/quirkey/repos?callback=?', Github.load);
 	},
 	load: function(github_data) {
 		var gh = Github;
+		if (github_data && !github_data.user) (github_data.user={}).repositories = github_data.data;
 		var repositories = github_data.user.repositories;
 		repositories.sort(function(a,b) {
 			return (a.watchers + a.forks) - (b.watchers + b.forks);
@@ -25,7 +26,7 @@ var Github = {
 		});
 	},
 	displayRepository: function(inside, repo, show_stats) {
-		var repo_html = '<div class="repo"><h3><a href="' + repo.url + '">' + repo.name + '</a>';
+		var repo_html = '<div class="repo"><h3><a href="' + (repo.html_url || repo.url) + '">' + repo.name + '</a>';
 		if (show_stats) {
 			repo_html += ' (' + repo.watchers + ')';
 		}
