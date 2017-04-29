@@ -1,18 +1,16 @@
 var Github = {
-	initialize: function () {
+	initialize() {
 		this.fetch();
 	},
-	fetch: function() {
+	fetch() {
 		$.getJSON('http://github.com/api/v1/json/quirkey?callback=?', Github.load);
 	},
-	load: function(github_data) {
+	load(github_data) {
 		var gh = Github;
 		var repositories = github_data.user.repositories;
-		repositories.sort(function(a,b) {
-			return (a.watchers + a.forks) - (b.watchers + b.forks);
-		});
+		repositories.sort((a, b) => (a.watchers + a.forks) - (b.watchers + b.forks));
 		$('.project_holder').hide();
-		$.each(repositories, function(i, repository) {
+		$.each(repositories, (i, repository) => {
 			if (!repository.fork && !repository.private) {
 				if (repository.watchers > 10) {
 					// popular
@@ -24,7 +22,7 @@ var Github = {
 			}
 		});
 	},
-	displayRepository: function(inside, repo, show_stats) {
+	displayRepository(inside, repo, show_stats) {
 		var repo_html = '<div class="repo"><h3><a href="' + repo.url + '">' + repo.name + '</a>';
 		if (show_stats) {
 			repo_html += ' (' + repo.watchers + ')';
@@ -39,6 +37,6 @@ var Github = {
 	}
 };
 
-$(function() {
+$(() => {
 	Github.initialize();
 })

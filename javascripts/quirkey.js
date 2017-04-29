@@ -1,31 +1,31 @@
 var Quirkey = {
-	initialize: function() {
+	initialize() {
 		this.quirkey_nav.initialize();
 	},
 	quirkey_nav: {
 		opened: false,
-		initialize: function() {
+		initialize() {
 			var port = this;
-			$('.quirkey_nav_open').click(function() {
+			$('.quirkey_nav_open').click(() => {
 				if (port.opened) {
 					port.close();
 				} else {
 					port.open();
 				}
 			});
-			$('.quirkey_nav_close').click(function() {
+			$('.quirkey_nav_close').click(() => {
 				port.close();
 			});
 		},
-		open: function() {
+		open() {
 			this.initial_top = $('#logo').css('top');
 			$('#logo').animate({'top': '0px'}, 400);
-			$('#quirkey_nav').slideDown(400, function() {
+			$('#quirkey_nav').slideDown(400, () => {
 				$('.quirkey_nav_close').slideDown();
 			});
 			this.opened = true;
 		},
-		close: function() {
+		close() {
 			$('.quirkey_nav_close').hide();
 			$('#logo').animate({'top': this.initial_top}, 400);
 			$('#quirkey_nav').slideUp(400);
@@ -35,6 +35,6 @@ var Quirkey = {
 };
 
 
-$(function() {
+$(() => {
 	Quirkey.initialize();
 })
